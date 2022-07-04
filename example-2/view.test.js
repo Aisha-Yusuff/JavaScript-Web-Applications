@@ -15,8 +15,16 @@ describe("Page view", () => {
   });
 
   it("adds a new paragraph", () => {
+    document.body.innerHTML = fs.readFileSync("./index.html");
     const view = new View();
     view.addParagraph();
     expect(document.querySelectorAll("p").length).toBe(3);
+  });
+
+  it("removes all paragraphs in the document", () => {
+    document.body.innerHTML = fs.readFileSync("./index.html");
+    const view = new View();
+    view.clearParagraphs();
+    expect(document.querySelectorAll("p").length).toBe(0);
   });
 });
