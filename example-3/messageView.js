@@ -10,12 +10,12 @@ class MessageView {
     this.hideButtonEl.addEventListener("click", () => {
       this.hideMessage();
     });
+    this.inputValue = document.querySelector("#message-input");
   }
-
   displayMessage() {
     let div = document.createElement("div");
     div.setAttribute("id", "message");
-    div.innerHTML = "This message is displayed by JavaScript";
+    div.innerHTML = this.inputValue.value;
     this.mainContainerEl.append(div);
     console.log("Thanks for clicking me!");
   }

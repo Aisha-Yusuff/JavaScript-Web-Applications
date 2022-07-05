@@ -11,9 +11,15 @@ describe("MessageView", () => {
 
     const view = new MessageView();
 
+    const inputEl = document.querySelector("#message-input");
+    inputEl.value = "The message input";
+
     const buttonEl = document.querySelector("#show-message-button");
     buttonEl.click();
 
+    expect(document.querySelector("#message").innerHTML).toEqual(
+      "The message input"
+    );
     expect(document.querySelector("#message")).not.toBeNull();
   });
 
