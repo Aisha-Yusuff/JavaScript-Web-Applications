@@ -19,7 +19,6 @@ class MessageView {
     this.mainContainerEl.append(div);
     console.log("Thanks for clicking me!");
   }
-
   hideMessage() {
     document.querySelector("#message").remove();
   }
